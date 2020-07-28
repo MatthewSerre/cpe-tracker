@@ -1,0 +1,71 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Courses</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Trainer</th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Sponsor</th>
+      <th>Format</th>
+      <th>Cpa</th>
+      <th>Cia</th>
+      <th>Cfe</th>
+      <th>Cisa</th>
+      <th>Category</th>
+      <th>Hours</th>
+      <th>Cost</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.name %></td>
+        <td><%= course.description %></td>
+        <td><%= course.trainer %></td>
+        <td><%= course.date %></td>
+        <td><%= course.location %></td>
+        <td><%= course.sponsor %></td>
+        <td><%= course.format %></td>
+        <td><%= course.cpa %></td>
+        <td><%= course.cia %></td>
+        <td><%= course.cfe %></td>
+        <td><%= course.cisa %></td>
+        <td><%= course.category %></td>
+        <td><%= course.hours %></td>
+        <td>$<%= course.cost %></td>
+        <td><%= link_to 'Show', course %></td>
+        <td><%= link_to 'Edit', edit_course_path(course) %></td>
+        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    <% if @courses.length >= 1 %>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> Total Hours: <%= @courses.sum(&:hours) %></td>
+      <td> Total Cost: $<%= @courses.sum(&:cost) %></td>
+      <td> </td>
+      <td> </td>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Course', new_course_path %>

@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @course.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @course.description %>
+</p>
+
+<p>
+  <strong>Trainer:</strong>
+  <%= @course.trainer.name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @course.date %>
+</p>
+
+<p>
+  <strong>Hours:</strong>
+  <%= @course.hours %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @course.location %>
+</p>
+
+<p>
+  <strong>Sponsor:</strong>
+  <%= @course.sponsor %>
+</p>
+
+<p>
+  <strong>Format:</strong>
+  <%= @course.format %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @course.cost %>
+</p>
+
+<p>
+  <strong>Cpa:</strong>
+  <%= @course.cpa %>
+</p>
+
+<p>
+  <strong>Cia:</strong>
+  <%= @course.cia %>
+</p>
+
+<p>
+  <strong>Cfe:</strong>
+  <%= @course.cfe %>
+</p>
+
+<p>
+  <strong>Cisa:</strong>
+  <%= @course.cisa %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @course.category %>
+</p>
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>
