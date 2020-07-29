@@ -32,7 +32,7 @@
     <div class="col-sm-10">
       <%= form.text_field :trainer_name, list: "trainers_autocomplete", class: "form-control" %>
       <datalist id="trainers_autocomplete">
-        <% Trainer.all.each do |trainer| %>
+        <% current_user.trainers.each do |trainer| %>
           <option value="<%= trainer.name %>">
         <% end %>
       </datalist>
@@ -40,58 +40,88 @@
   </div>
 
   <div class="form-group row">
-    <%= form.label :date %>
+    <%= form.label :date, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
     <%= form.date_select :date %>
+    </div>
   </div>
 
   <div class="form-group row">
-    <%= form.label :hours %>
-    <%= form.number_field :hours %>
+    <%= form.label :hours, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+    <%= form.number_field :hours, class: "form-control" %>
+    </div>
   </div>
 
   <div class="form-group row">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
+    <%= form.label :location, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+    <%= form.text_field :location, class: "form-control" %>
+    </div>
   </div>
 
   <div class="form-group row">
-    <%= form.label :sponsor %>
-    <%= form.text_field :sponsor %>
+    <%= form.label :sponsor, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+    <%= form.text_field :sponsor, class: "form-control" %>
+    </div>
   </div>
 
   <div class="form-group row">
-    <%= form.label :format %>
-    <%= form.text_field :format %>
+    <%= form.label :format, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+    <%= form.text_field :format, class: "form-control" %>
+    </div>
   </div>
 
   <div class="form-group row">
-    <%= form.label :cost %>
-    <%= form.text_field :cost %>
+    <%= form.label :cost, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+          <span class="input-group-text">0.00</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" placeholder="Round to the nearest whole dollar amount">
+      </div>
+    </div>
   </div>
 
   <div class="form-group row">
-    <%= form.label :cpa %>
-    <%= form.check_box :cpa %>
+    <%= form.label :certification, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="cpa">
+        <label class="form-check-label" for="defaultCheck1">
+          CPA
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="cia">
+        <label class="form-check-label" for="defaultCheck1">
+          CIA
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="cfe">
+        <label class="form-check-label" for="defaultCheck1">
+          CFE
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="cisa">
+        <label class="form-check-label" for="defaultCheck1">
+          CISA
+        </label>
+      </div>
+    </div>
   </div>
-
+  
   <div class="form-group row">
-    <%= form.label :cia %>
-    <%= form.check_box :cia %>
-  </div>
-
-  <div class="form-group row">
-    <%= form.label :cfe %>
-    <%= form.check_box :cfe %>
-  </div>
-
-  <div class="form-group row">
-    <%= form.label :cisa %>
-    <%= form.check_box :cisa %>
-  </div>
-
-  <div class="form-group row">
-    <%= form.label :category %>
-    <%= form.text_field :category %>
+    <%= form.label :category, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+    <%= form.text_field :category, class: "form-control" %>
+    </div>
   </div>
 
   <div class="actions">
