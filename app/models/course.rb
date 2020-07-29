@@ -1,6 +1,7 @@
 class Course < ApplicationRecord
     belongs_to :user
     belongs_to :trainer
+    has_one_attached :certificate
     validates :name, presence: true, uniqueness: true
     validates :description, :trainer, :hours, :location, :sponsor, :format, :cost, :category, presence: true
 
